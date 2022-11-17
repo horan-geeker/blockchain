@@ -14,7 +14,7 @@ import (
 
 const (
 	GAS_LIMIT = 21000
-	GAS_PRICE = 5 * 1e9
+	GAS_PRICE = 500 * 1e9
 )
 
 func SignTransaction(tx *types.Transaction, privateKeyStr string) (string, error) {
@@ -48,7 +48,7 @@ func StringToPrivateKey(privateKeyStr string) (*ecdsa.PrivateKey, error) {
 }
 
 func main() {
-	sign, err := TransferRawSign("0xc2FcF1f82C6F0af412E3e74AeD192EA9Ba62d279", big.NewInt(0.001*1e18), "0x41f323f198b1bd743f4dfacc6fcae795e51406f4f97761b299145ce138d8bd98")
+	sign, err := TransferRawSign("0xc2FcF1f82C6F0af412E3e74AeD192EA9Ba62d279", big.NewInt(0.0001*1e18), "0x41f323f198b1bd743f4dfacc6fcae795e51406f4f97761b299145ce138d8bd98")
 	if err != nil {
 		panic(err)
 	}
